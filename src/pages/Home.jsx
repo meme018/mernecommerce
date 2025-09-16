@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout/Layout'
 import { useGetProductQuery } from '../services/productApi';
 import { useParams } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Home = () => {
 
@@ -60,13 +61,9 @@ const Home = () => {
   console.log("this is id",id)
 
 
-  const { data:product } = useGetProductQuery(); 
+  const { data:product, isLoading } = useGetProductQuery(); 
 
   console.log("product all data",product)
-
-
-
-
 
   return (
     <>
@@ -76,6 +73,8 @@ const Home = () => {
           <div class="mx-auto max-w-md text-center">
             <h2 class="font-serif text-2xl font-bold sm:text-3xl">Rame Dai ko Fruits Pasal</h2>
           </div>
+
+           
 
           <div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-4 lg:mt-16">
 

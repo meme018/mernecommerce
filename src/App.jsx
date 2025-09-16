@@ -5,17 +5,31 @@ import Home from './pages/Home'
 import Layout from './components/Layout/Layout'
 import Blog from './pages/Blog'
 import AddProduct from './pages/AddProduct'
+import { ToastContainer } from 'react-toastify'
+import Login from './pages/Login'
+import ProtectedRoute from './components/ProtectedRoute'
+import Checkout from './pages/Checkout'
+import Cart from './pages/Cart'
 
 function App() {
 
   return (
     <>
       <Layout>
+        <ToastContainer />
         <Routes>
-          <Route path='/:id' element={<Home />} />
-          <Route path='/addproduct' element={<AddProduct/>} />
+          {/* public route  */}
+          {/* <Route path='/:id' element={<Home />} /> */}
+          <Route path='/' element={<Home />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/blog' element={<Blog />} />
+          <Route path='/login' element={<Login />} />
+
+          {/* protected route  */}
+          <Route path='/addproduct' element={<ProtectedRoute><AddProduct /></ProtectedRoute>} />
+          <Route path='/checkout' element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
+          <Route path='/cart' element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+
         </Routes>
       </Layout>
     </>
