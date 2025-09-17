@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import ProtectedRoute from './components/ProtectedRoute'
 import Checkout from './pages/Checkout'
 import Cart from './pages/Cart'
+import SingleProduct from './pages/SingleProduct'
 
 function App() {
 
@@ -19,8 +20,8 @@ function App() {
         <ToastContainer />
         <Routes>
           {/* public route  */}
-          {/* <Route path='/:id' element={<Home />} /> */}
           <Route path='/' element={<Home />} />
+          <Route path='/:id' element={<SingleProduct />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/login' element={<Login />} />
