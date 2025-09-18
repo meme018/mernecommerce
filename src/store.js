@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { productApi } from './services/productApi'
 import { authApi } from './services/authApi'
+import { profileApi } from './services/profileApi'
 
 export const store = configureStore({
   reducer: {
     // Add the generated reducer as a specific top-level slice
     [productApi.reducerPath]: productApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
+    [profileApi.reducerPath]: profileApi.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
@@ -16,6 +18,7 @@ export const store = configureStore({
     getDefaultMiddleware().concat(
       productApi.middleware,
       authApi.middleware,
+      profileApi.middleware,
     ),
 })
 

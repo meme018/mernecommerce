@@ -11,6 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Checkout from './pages/Checkout'
 import Cart from './pages/Cart'
 import SingleProduct from './pages/SingleProduct'
+import Profile from './pages/Profile'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/addproduct' element={<ProtectedRoute><AddProduct /></ProtectedRoute>} />
           <Route path='/checkout' element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
           <Route path='/cart' element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+          <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
 
         </Routes>
       </Layout>
