@@ -90,12 +90,12 @@ const Checkout = () => {
         </div>
       </div>
       <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
-        {cart?.map((item) => (
-          <div class="px-4 pt-8">
-            <p class="text-xl font-medium">Order Summary</p>
-            <p class="text-gray-400">
-              Check your items. And select a suitable shipping method.
-            </p>
+        <div class="px-4 pt-8">
+          <p class="text-xl font-medium">Order Summary</p>
+          <p class="text-gray-400">
+            Check your items. And select a suitable shipping method.
+          </p>
+          {cart?.map((item) => (
             <div class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
               <div class="flex flex-col rounded-lg bg-white sm:flex-row">
                 <img
@@ -110,64 +110,64 @@ const Checkout = () => {
                 </div>
               </div>
             </div>
+          ))}
 
-            <p class="mt-8 text-lg font-medium">Shipping Methods</p>
-            <form class="mt-5 grid gap-6">
-              <div class="relative">
-                <input
-                  class="peer hidden"
-                  id="radio_1"
-                  type="radio"
-                  name="radio"
-                  checked
+          <p class="mt-8 text-lg font-medium">Shipping Methods</p>
+          <form class="mt-5 grid gap-6">
+            <div class="relative">
+              <input
+                class="peer hidden"
+                id="radio_1"
+                type="radio"
+                name="radio"
+                checked
+              />
+              <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+              <label
+                class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+                for="radio_1"
+              >
+                <img
+                  class="w-14 object-contain"
+                  src="/images/naorrAeygcJzX0SyNI4Y0.png"
+                  alt=""
                 />
-                <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
-                <label
-                  class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
-                  for="radio_1"
-                >
-                  <img
-                    class="w-14 object-contain"
-                    src="/images/naorrAeygcJzX0SyNI4Y0.png"
-                    alt=""
-                  />
-                  <div class="ml-5">
-                    <span class="mt-2 font-semibold">Fedex Delivery</span>
-                    <p class="text-slate-500 text-sm leading-6">
-                      Delivery: 2-4 Days
-                    </p>
-                  </div>
-                </label>
-              </div>
-              <div class="relative">
-                <input
-                  class="peer hidden"
-                  id="radio_2"
-                  type="radio"
-                  name="radio"
-                  checked
+                <div class="ml-5">
+                  <span class="mt-2 font-semibold">Fedex Delivery</span>
+                  <p class="text-slate-500 text-sm leading-6">
+                    Delivery: 2-4 Days
+                  </p>
+                </div>
+              </label>
+            </div>
+            <div class="relative">
+              <input
+                class="peer hidden"
+                id="radio_2"
+                type="radio"
+                name="radio"
+                checked
+              />
+              <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+              <label
+                class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+                for="radio_2"
+              >
+                <img
+                  class="w-14 object-contain"
+                  src="/images/oG8xsl3xsOkwkMsrLGKM4.png"
+                  alt=""
                 />
-                <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
-                <label
-                  class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
-                  for="radio_2"
-                >
-                  <img
-                    class="w-14 object-contain"
-                    src="/images/oG8xsl3xsOkwkMsrLGKM4.png"
-                    alt=""
-                  />
-                  <div class="ml-5">
-                    <span class="mt-2 font-semibold">Fedex Delivery</span>
-                    <p class="text-slate-500 text-sm leading-6">
-                      Delivery: 2-4 Days
-                    </p>
-                  </div>
-                </label>
-              </div>
-            </form>
-          </div>
-        ))}
+                <div class="ml-5">
+                  <span class="mt-2 font-semibold">Fedex Delivery</span>
+                  <p class="text-slate-500 text-sm leading-6">
+                    Delivery: 2-4 Days
+                  </p>
+                </div>
+              </label>
+            </div>
+          </form>
+        </div>
 
         <div class="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
           <p class="text-xl font-medium">Payment Details</p>
