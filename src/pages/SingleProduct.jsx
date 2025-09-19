@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate, useParams } from "react-router";
 import { useGetProductByIdQuery } from "../services/productApi";
 import { toast } from "react-toastify";
+import { Navigate } from "react-router";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const SingleProduct = () => {
   let { id } = useParams();
@@ -11,17 +13,23 @@ const SingleProduct = () => {
   console.log("single data", data);
 
   const AddToCartHandler = () => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    cart.push({
-      id: data.id,
-      title: data.title,
-      price: data.price,
-      thumbnail: data.thumbnail,
-      quantity: 1,
-    });
-    localStorage.setItem("cart", JSON.stringify(cart));
-    toast.success("Product added to cart successfully!");
-    nav("/cart");
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user || !user.accessToken) {
+      return nav("/login");
+    } else {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      cart.push({
+        id: data.id,
+        title: data.title,
+        price: data.price,
+        thumbnail: data.thumbnail,
+        quantity: 1,
+      });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      toast.success("Product added to cart successfully!");
+      nav("/cart");
+    }
   };
 
   return (
